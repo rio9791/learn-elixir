@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+    
+    elixir:
+      build: .
+      environment:
+        - ELIXIR_VERSION=$ELIXIR_VERSION
+        - ELIXIR_DOWNLOAD_URL=$ELIXIR_DOWNLOAD_URL
+        - ELIXIR_DOWNLOAD_SHA256=$ELIXIR_DOWNLOAD_SHA256
+      volumes:
+        - $APPLICATION:/application
+
+volumes:
+  elixir:
+    driver: "local"
